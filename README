@@ -2,7 +2,7 @@
 
 This is a ruby socket server for flash.
 Socket IO handled by awesome Cool.io, AMF serialization by RocketAMF.
-I took logic from Grape to make API simple to read and create.
+API made with Grape influence.
 
 == Examples
 
@@ -57,6 +57,8 @@ class Sample < Atomic::Route
 end
 
 == TODO
+
+connections, sessions
 
 class Sample < Atomic::Route
   namespace :chat do
