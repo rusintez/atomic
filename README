@@ -10,62 +10,62 @@ I took logic from Grape to make API simple to read and create.
 
 class Sample < Atomic::Route
 
-	namespace :posts do
-		
-		get :all do
-			Post.all
-		end
-		
-		get :save do
-			Post.create(params[:post])
-		end
-		
-		get :destroy do
-			Post.destroy(params[:id])
-		end
-		
-	end
-		
+  namespace :posts do
+    
+    get :all do
+      Post.all
+    end
+    
+    get :save do
+      Post.create(params[:post])
+    end
+    
+    get :destroy do
+      Post.destroy(params[:id])
+    end
+    
+  end
+    
 end
 
 2 
 
 class Sample < Atomic::Route
-	
-	namespace :controls do
-	
-		get :left do
-			puts 'Player moved left'
-		end
-	
-		get :right do
-			puts 'Player moved right'
-		end
-	end
-	
-	namespace :scores do
-	
-		get :all do
-			Scores.all # returns block
-		end
-	
-		get :submit do
-			Scores.create(params[:score])
-		end
-	end
-	
+  
+  namespace :controls do
+  
+    get :left do
+      puts 'Player moved left'
+    end
+  
+    get :right do
+      puts 'Player moved right'
+    end
+  end
+  
+  namespace :scores do
+  
+    get :all do
+      Scores.all # returns block
+    end
+  
+    get :submit do
+      Scores.create(params[:score])
+    end
+  end
+  
 end
 
 == TODO
 
 class Sample < Atomic::Route
-	namespace :chat do
-		get :message do
-			user = User.first(:username => params[:username])
-			connection = connections.find(user.id)
-			connection.send(params[:message])
-		end
-	end
+  namespace :chat do
+    get :message do
+      user = User.first(:username => params[:username])
+      connection = connections.find(user.id)
+      connection.send(params[:message])
+    end
+  end
 end
 
 helper_methods (auth, current_post, etc.)
