@@ -4,6 +4,33 @@ This is a ruby socket server for flash.
 Socket IO handled by awesome Cool.io, AMF serialization by RocketAMF.
 API made with Grape influence.
 
+== Install
+
+gem install atomic
+
+== Usage
+
+# your_app.rb
+
+require 'atomic'
+
+class Sample < Atomic::Base
+	namespace :example do
+		get :action do
+			puts 'Sample.Example.Action triggered'
+		end
+	end
+end
+
+Atomic::Router.config do
+	attach Sample
+	# attach AnotherAPI
+end
+
+# Atomic::Server.run('0.0.0.0', 4567) 
+Atomic::Server.run() 
+
+
 == Examples
 
 1
